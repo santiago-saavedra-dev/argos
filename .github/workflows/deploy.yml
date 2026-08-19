@@ -13,10 +13,12 @@ permissions:
   pages: write
   id-token: write
 
-# Si se acumulan pushes, que termine el ultimo y no se pisen entre si.
+# Un deploy a la vez. Si se acumulan pushes se descartan los intermedios,
+# pero nunca se corta uno en curso: cancelar a mitad de la publicacion puede
+# dejar el sitio servido a medias.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
