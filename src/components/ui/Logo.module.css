@@ -1,0 +1,28 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--c-ink);
+}
+
+.mark {
+  color: var(--c-green);
+  flex: none;
+}
+
+.word {
+  font-family: var(--f-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.light .word {
+  color: #fff;
+}
+
+.light .mark {
+  color: #a9d2b1;
+}

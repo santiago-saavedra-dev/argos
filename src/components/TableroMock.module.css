@@ -1,0 +1,161 @@
+.frame {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+  max-width: 520px;
+  width: 100%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: 0.7rem 0.95rem;
+  border-bottom: 1px solid var(--c-line);
+  background: var(--c-surface-2);
+}
+
+.estancia {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.envivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-green);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-green);
+  animation: blink 2.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #eef2e6;
+}
+
+.pulseRing {
+  transform-origin: center;
+  animation: ring 2.2s ease-out infinite;
+}
+
+@keyframes ring {
+  0% {
+    r: 6;
+    opacity: 0.55;
+  }
+  70% {
+    r: 20;
+    opacity: 0;
+  }
+  100% {
+    r: 20;
+    opacity: 0;
+  }
+}
+
+.potreroLabel {
+  font-family: var(--f-sans);
+  font-size: 9px;
+  font-weight: 600;
+  fill: #4d6350;
+  letter-spacing: 0.04em;
+}
+
+.alertas {
+  padding: 0.55rem 0.55rem 0.7rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.alerta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--r-md);
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-line);
+  border-left-width: 3px;
+}
+
+.critica {
+  border-left-color: var(--c-clay);
+  background: var(--c-clay-soft);
+}
+
+.atencion {
+  border-left-color: var(--c-amber);
+  background: var(--c-amber-soft);
+}
+
+.icono {
+  line-height: 0;
+}
+
+.critica .icono {
+  color: var(--c-clay);
+}
+
+.atencion .icono {
+  color: var(--c-amber);
+}
+
+.texto {
+  min-width: 0;
+}
+
+.titulo {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-ink);
+  line-height: 1.3;
+}
+
+.detalle {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  line-height: 1.35;
+}
+
+.hora {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 460px) {
+  .detalle {
+    display: none;
+  }
+}

@@ -1,0 +1,88 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.visual {
+  display: flex;
+  justify-content: center;
+}
+
+.tagSvg {
+  width: min(100%, 340px);
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.25));
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #a9d2b1;
+  margin-bottom: var(--s-3);
+}
+
+.titulo {
+  font-size: var(--fs-h2);
+  color: #fff;
+  max-width: 22ch;
+}
+
+.parrafo {
+  margin-top: var(--s-4);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+.institucional {
+  margin-top: var(--s-6);
+  padding: var(--s-5);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.institucionalTexto {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+}
+
+.organismos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+}
+
+.organismo {
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    order: -1;
+  }
+
+  .tagSvg {
+    width: min(100%, 260px);
+  }
+}

@@ -1,0 +1,252 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #a9d2b1;
+  margin-bottom: var(--s-3);
+}
+
+.titulo {
+  font-size: var(--fs-h2);
+  color: #fff;
+}
+
+.texto {
+  margin-top: var(--s-4);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  max-width: 46ch;
+}
+
+.bullets {
+  margin-top: var(--s-5);
+  display: grid;
+  gap: var(--s-3);
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: var(--fs-sm);
+}
+
+.bulletIcono {
+  color: #a9d2b1;
+  flex: none;
+  line-height: 0;
+  margin-top: 2px;
+}
+
+.directo {
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+}
+
+.enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: #fff;
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.enlace:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* --- Formulario --- */
+.card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--sh-lg);
+}
+
+.cardTitulo {
+  font-size: 1.3rem;
+  margin-bottom: var(--s-2);
+}
+
+.cardSub {
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+  margin-bottom: var(--s-5);
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+}
+
+.campoAncho {
+  grid-column: 1 / -1;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.opcional {
+  font-weight: 400;
+  color: var(--c-muted);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.68rem 0.85rem;
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--r-sm);
+  background: var(--c-surface-2);
+  font-size: var(--fs-sm);
+  color: var(--c-ink);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  background: var(--c-surface);
+  border-color: var(--c-green);
+  box-shadow: var(--ring);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 6.5rem;
+  font-family: inherit;
+}
+
+.select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--c-muted) 50%),
+    linear-gradient(135deg, var(--c-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% + 2px),
+    calc(100% - 13px) calc(50% + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2.2rem;
+}
+
+.inputError {
+  border-color: var(--c-clay);
+  background: var(--c-clay-soft);
+}
+
+.error {
+  font-size: var(--fs-xs);
+  color: #8c3b21;
+  font-weight: 500;
+}
+
+.pie {
+  margin-top: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.legal {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+.aviso {
+  margin-top: var(--s-4);
+  padding: var(--s-4);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+.avisoError {
+  background: var(--c-clay-soft);
+  border: 1px solid #e0bfae;
+  color: #8c3b21;
+}
+
+.avisoDemo {
+  background: var(--c-amber-soft);
+  border: 1px solid var(--c-amber-line);
+  color: #7a5008;
+}
+
+/* --- Estado de exito --- */
+.exito {
+  text-align: center;
+  padding: var(--s-6) var(--s-4);
+  display: grid;
+  gap: var(--s-3);
+  justify-items: center;
+}
+
+.exitoIcono {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--c-green-soft);
+  color: var(--c-green);
+}
+
+.exitoTitulo {
+  font-size: 1.35rem;
+}
+
+.exitoTexto {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  max-width: 40ch;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .campos {
+    grid-template-columns: 1fr;
+  }
+}

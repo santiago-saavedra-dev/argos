@@ -1,0 +1,116 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: var(--s-4);
+  align-items: stretch;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-6) var(--s-5);
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--sh-sm);
+  position: relative;
+}
+
+.destacada {
+  border-color: var(--c-green);
+  box-shadow: var(--sh-md);
+}
+
+.destacadaTag {
+  position: absolute;
+  top: -0.7rem;
+  left: var(--s-5);
+  padding: 0.18rem 0.7rem;
+  border-radius: var(--r-pill);
+  background: var(--c-green);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.tipo {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.nombre {
+  font-size: 1.28rem;
+  font-family: var(--f-serif);
+  color: var(--c-ink);
+}
+
+.que {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  line-height: 1.6;
+}
+
+.rol {
+  margin-top: auto;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--c-line);
+  font-size: var(--fs-sm);
+  color: var(--c-green-dark);
+  line-height: 1.55;
+}
+
+.dos {
+  margin-top: var(--s-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--s-4);
+}
+
+.regla {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--r-lg);
+  background: var(--c-green-dark);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.reglaTitulo {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a9d2b1;
+  margin-bottom: var(--s-3);
+}
+
+.reglaTexto {
+  font-family: var(--f-serif);
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
+  line-height: 1.4;
+  color: #fff;
+}
+
+.barrera {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+}
+
+.barreraTitulo {
+  font-size: 1.2rem;
+  margin-bottom: var(--s-3);
+}
+
+.barreraTexto {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  line-height: 1.65;
+}

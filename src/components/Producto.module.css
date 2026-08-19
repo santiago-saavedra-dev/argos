@@ -1,0 +1,123 @@
+.capas {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.capa {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+}
+
+.capaHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  position: relative;
+}
+
+.numero {
+  font-family: var(--f-serif);
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--c-green);
+  opacity: 0.35;
+}
+
+.nombre {
+  font-family: var(--f-serif);
+  font-size: var(--fs-h3);
+  color: var(--c-ink);
+}
+
+.capaTag {
+  align-self: flex-start;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-green-dark);
+  background: var(--c-green-soft);
+  border: 1px solid var(--c-green-line);
+  border-radius: var(--r-pill);
+  padding: 0.2rem 0.65rem;
+}
+
+.titulo {
+  font-size: 1.22rem;
+  color: var(--c-ink);
+  font-family: var(--f-serif);
+}
+
+.descripcion {
+  margin-top: var(--s-3);
+  color: var(--c-ink-2);
+  line-height: 1.6;
+}
+
+.items {
+  margin-top: var(--s-5);
+  display: grid;
+  gap: var(--s-3);
+}
+
+.itemsNodos {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  line-height: 1.5;
+}
+
+.itemNodo {
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+}
+
+.itemIcono {
+  flex: none;
+  color: var(--c-green);
+  line-height: 0;
+  margin-top: 1px;
+}
+
+.nota {
+  margin-top: var(--s-5);
+  padding: var(--s-4) var(--s-5);
+  background: var(--c-green-soft);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  color: var(--c-green-dark);
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .capa {
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+  }
+
+  .capaHead {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+  }
+
+  .numero {
+    font-size: 1.8rem;
+  }
+}

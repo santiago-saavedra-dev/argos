@@ -1,0 +1,105 @@
+.flujo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--s-3);
+  align-items: stretch;
+  margin-bottom: var(--s-7);
+}
+
+.paso {
+  position: relative;
+  padding: var(--s-5) var(--s-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-2);
+  height: 100%;
+}
+
+.pasoIcono {
+  color: var(--c-green);
+  line-height: 0;
+}
+
+.pasoNombre {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-ink);
+  line-height: 1.3;
+}
+
+.pasoDetalle {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  line-height: 1.4;
+}
+
+/* Flecha entre pasos */
+.paso:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: calc(var(--s-3) * -1);
+  top: 50%;
+  width: var(--s-3);
+  height: 1px;
+  background: var(--c-line-strong);
+}
+
+.paso:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid var(--c-line-strong);
+  border-right: 1px solid var(--c-line-strong);
+  transform: rotate(45deg);
+}
+
+.decisiones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--s-4);
+}
+
+.decision {
+  height: 100%;
+  padding: var(--s-5);
+  border-radius: var(--r-md);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-top: 3px solid var(--c-green);
+}
+
+.decisionTitulo {
+  font-size: 1.08rem;
+  margin-bottom: var(--s-2);
+}
+
+.decisionTexto {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .flujo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .paso::before,
+  .paso::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .flujo {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,59 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: var(--s-4);
+}
+
+.card {
+  height: 100%;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--c-line-strong);
+  box-shadow: var(--sh-md);
+}
+
+.num {
+  font-family: var(--f-serif);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-clay);
+  letter-spacing: 0.08em;
+}
+
+.titulo {
+  font-size: 1.08rem;
+  font-family: var(--f-serif);
+  color: var(--c-ink);
+  line-height: 1.25;
+}
+
+.detalle {
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+  line-height: 1.55;
+}
+
+.cierre {
+  margin-top: var(--s-6);
+  padding: var(--s-5) var(--s-6);
+  background: var(--c-clay-soft);
+  border-left: 3px solid var(--c-clay);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-family: var(--f-serif);
+  font-size: clamp(1.05rem, 0.98rem + 0.5vw, 1.35rem);
+  color: var(--c-ink);
+  line-height: 1.45;
+}

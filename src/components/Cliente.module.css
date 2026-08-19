@@ -1,0 +1,75 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--s-4);
+}
+
+.card {
+  height: 100%;
+  padding: var(--s-5);
+  border-radius: var(--r-md);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.principal {
+  background: var(--c-green-soft);
+  border-color: var(--c-green-line);
+}
+
+.tag {
+  align-self: flex-start;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.principal .tag {
+  color: var(--c-green-dark);
+}
+
+.titulo {
+  font-size: 1.1rem;
+  font-family: var(--f-serif);
+  color: var(--c-ink);
+  line-height: 1.25;
+}
+
+.descripcion {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+  line-height: 1.6;
+}
+
+.nota {
+  margin-top: var(--s-6);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--r-lg);
+  background: var(--c-ink);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.notaTitulo {
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.7rem);
+  color: #fff;
+}
+
+.notaTexto {
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}
+
+@media (max-width: 780px) {
+  .nota {
+    grid-template-columns: 1fr;
+  }
+}
