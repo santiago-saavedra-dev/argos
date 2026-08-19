@@ -81,7 +81,28 @@ src/
 
 ## Publicar
 
-`npm run build` deja todo en `dist/`, que es HTML, CSS y JS estáticos. Se sube tal cual a Netlify, Vercel, Cloudflare Pages o cualquier hosting estático. En Netlify o Vercel alcanza con conectar el repo: detectan Vite solos y el comando es `npm run build` con directorio `dist`.
+`npm run build` deja todo en `dist/`: HTML, CSS y JS estáticos, sin servidor detrás.
+
+### GitHub Pages
+
+Ya está el workflow en `.github/workflows/deploy.yml`: cada push a `main` construye y publica. Para que funcione hay que hacer una vez, en el repo:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. El repo tiene que ser **público**, salvo que la cuenta tenga GitHub Pro o superior: en el plan gratuito Pages no publica repos privados.
+
+El sitio queda en `https://<usuario>.github.io/argos/`. Como Pages sirve desde un subdirectorio y no desde la raíz, `vite.config.ts` usa `base: '/argos/'` en los builds de producción — sin eso, la página carga en blanco porque los assets se piden a la raíz del dominio.
+
+Las variables (`VITE_LEADS_ENDPOINT`, `VITE_WHATSAPP`, `VITE_CONTACT_EMAIL`) se definen en **Settings → Secrets and variables → Actions → Variables**. Ojo: van dentro del bundle y quedan a la vista de cualquiera, así que son *variables*, no *secrets*. Nunca pongas ahí una clave de API.
+
+### Otros hostings
+
+Netlify, Vercel y Cloudflare Pages conectan directo con el repo, **también si es privado**, y detectan Vite solos: comando `npm run build`, directorio `dist`. Como sirven desde la raíz del dominio, hay que anular el prefijo con una variable de entorno en el panel del servicio:
+
+```
+BASE_PATH=/
+```
+
+Lo mismo aplica si algún día Argos tiene dominio propio.
 
 ## Pendientes conocidos
 
